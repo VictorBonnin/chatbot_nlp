@@ -759,7 +759,7 @@ def show_data_visualization_page():
 
     # CSV file loading with error handling
     try:
-        df = pd.read_csv("projet_data/train.csv")
+        df = pd.read_csv("projet_data/train.csv", encoding="latin1")
         
         # Main metrics calculation
         nb_rows = len(df)
@@ -1019,7 +1019,7 @@ def show_raw_data_page():
 
     try:
         # Load the actual data
-        df = pd.read_csv("projet_data/train.csv")
+        df = pd.read_csv("projet_data/train.csv", encoding="latin1")
         
         # Compute statistics
         total_rows = len(df)

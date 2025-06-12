@@ -64,17 +64,17 @@ def predict_sentiment(request: TweetRequest):
 
 # ---- CHATBOT ROUTE ----
 
-# Conversation memory (in prod: use Redis or db, here: stateless)
+# Conversation memory
 class ChatState(BaseModel):
     step: str
     data: Dict[str, Optional[str]]
 
 class ChatbotRequest(BaseModel):
     message: str
-    state: Optional[ChatState] = None  # Context passed back by frontend
+    state: Optional[ChatState] = None
 
 def load_unique_values(csv_path, colname):
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(csv_path, encoding="latin1")
     values = df[colname].dropna().unique()
     values = [str(val).strip() for val in values]
     return values

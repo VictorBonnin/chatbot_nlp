@@ -23,7 +23,7 @@ pip install -r requirements.txt
 ## Lancer le projet :
 ### L'API
 ```bash
-uvicorn twitter_api:app --reload
+uvicorn main:app --reload
 ```
 ```bash
 http://localhost:8000/docs
@@ -32,5 +32,5 @@ http://localhost:8000/docs
 
 ### Streamlit
 ```bash
-streamlit run .\streamlit.py 
+streamlit run .\app.py 
 ```
